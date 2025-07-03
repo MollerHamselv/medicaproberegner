@@ -1,5 +1,4 @@
     <script src="https://cdn.tailwindcss.com"></script> 
-    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -20,7 +19,7 @@
                 }
             }
         }
-    </script>
+
 
     <!-- Add EmailJS script -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -337,4 +336,4 @@
                 maximumFractionDigits: 0
             }).format(Math.round(amount));
         }
-    </script>
+
