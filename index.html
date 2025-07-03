@@ -1,0 +1,431 @@
+ <!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omkostningsberegner for Medarbejderstress | Medica Pro</title>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="bg-gradient-to-r from-primary-500 to-primary-700 p-6 text-white">
+            <div class="header-container">
+                <div class="header-content">
+                    <h1 class="text-2xl md:text-3xl font-bold">Omkostningsberegner for Medarbejderstress</h1>
+                    <p class="mt-2 opacity-90">Få et overblik over de økonomiske konsekvenser af stress på arbejdspladsen</p>
+                </div>
+                <div class="logo-container">
+                    <img src="https://assets.ycodeapp.com/assets/app87248/Images/til%20forms%20(1)-oqsemermuy.webp" alt="Medica Pro Logo" class="logo">
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-6 md:p-8">
+            <!-- Introduktion -->
+            <div class="bg-primary-50 p-4 rounded-lg mb-6 border-l-4 border-primary-500">
+                <h2 class="text-lg font-semibold text-primary-800">Sådan bruger du beregneren</h2>
+                <p class="text-gray-700 mt-1">
+                    Udfyld felterne nedenfor med dine oplysninger eller brug standardværdierne, som er baseret på gennemsnitlige data fra danske arbejdspladser. 
+                    Hold musen over <span class="info-icon">i</span> ikonerne for at få mere information om hvert felt.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Virksomhedsoplysninger</h2>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <label class="block text-gray-700" for="employees">Antal medarbejdere</label>
+                                <div class="tooltip ml-2">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltip-text">Indtast det samlede antal medarbejdere i din virksomhed eller afdeling. Dette tal bruges til at beregne, hvor mange der potentielt kan være påvirket af stress.</span>
+                                </div>
+                            </div>
+                            <input type="number" id="employees" min="1" value="50" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            <p class="text-xs text-gray-500 mt-1">Typisk værdi: 10-500 medarbejdere</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <label class="block text-gray-700" for="avgSalary">Gennemsnitlig månedsløn (DKK)</label>
+                                <div class="tooltip ml-2">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltip-text">Indtast den gennemsnitlige månedsløn før skat for medarbejderne. Hvis du ikke kender det præcise beløb, kan du bruge standardværdien på 38.000 kr., som er tæt på det danske gennemsnit.</span>
+                                </div>
+                            </div>
+                            <input type="number" id="avgSalary" min="0" value="38000" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            <p class="text-xs text-gray-500 mt-1">Landsgennemsnit: ca. 38.000 kr.</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <label class="block text-gray-700" for="stressPercent">Andel af stressramte medarbejdere (%)</label>
+                                <div class="tooltip ml-2">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltip-text">Angiver hvor stor en procentdel af medarbejderne der oplever stress. Ifølge Det Nationale Forskningscenter for Arbejdsmiljø oplever ca. 15-25% af danske medarbejdere stress i varierende grad.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="range" id="stressPercent" min="0" max="50" value="15" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
+                                <span id="stressPercentValue" class="ml-3 w-12 text-center font-medium">15%</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0%</span>
+                                <span>25%</span>
+                                <span>50%</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <label class="block text-gray-700" for="absentDays">Sygedage pr. stressramt medarbejder (årligt)</label>
+                                <div class="tooltip ml-2">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltip-text">Det gennemsnitlige antal sygedage pr. år for en stressramt medarbejder. Forskning viser at stressramte har 2-3 gange så højt sygefravær som gennemsnittet. En typisk dansk medarbejder har ca. 7-9 sygedage årligt.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="range" id="absentDays" min="0" max="60" value="20" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
+                                <span id="absentDaysValue" class="ml-3 w-16 text-center font-medium">20 dage</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0</span>
+                                <span>30</span>
+                                <span>60</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <label class="block text-gray-700" for="productivityLoss">Produktivitetstab for stressramte (%)</label>
+                                <div class="tooltip ml-2">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltip-text">Angiver hvor meget produktivitet en stressramt medarbejder mister i procent. Forskning viser at stress kan reducere produktiviteten med 20-40% på grund af koncentrationsbesvær, træthed og nedsat motivation.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="range" id="productivityLoss" min="0" max="50" value="30" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
+                                <span id="productivityLossValue" class="ml-3 w-12 text-center font-medium">30%</span>
+                            </div>
+                            <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                <span>0%</span>
+                                <span>25%</span>
+                                <span>50%</span>
+                            </div>
+                        </div>
+                        
+                        <button id="calculateBtn" class="w-full bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7zm6 7a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-3 3a1 1 0 100 2h.01a1 1 0 100-2H10zm-4 1a1 1 0 011-1h.01a1 1 0 110 2H7a1 1 0 01-1-1zm1-4a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                            </svg>
+                            Beregn omkostninger
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                        <h2 class="text-xl font-semibold text-gray-800 mb-4">Årlige omkostninger</h2>
+                        <div id="results-container">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="result-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                    <div class="flex items-center">
+                                        <h3 class="text-gray-500 text-sm">Sygefravær</h3>
+                                        <div class="tooltip ml-2">
+                                            <span class="info-icon">i</span>
+                                            <span class="tooltip-text">De direkte omkostninger ved sygefravær beregnet ud fra antal sygedage og lønomkostninger for stressramte medarbejdere.</span>
+                                        </div>
+                                    </div>
+                                    <p id="absentCost" class="text-2xl font-bold text-gray-800">0 kr.</p>
+                                </div>
+                                <div class="result-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                    <div class="flex items-center">
+                                        <h3 class="text-gray-500 text-sm">Produktivitetstab</h3>
+                                        <div class="tooltip ml-2">
+                                            <span class="info-icon">i</span>
+                                            <span class="tooltip-text">Omkostninger ved nedsat produktivitet hos stressramte medarbejdere, når de er på arbejde men ikke fungerer optimalt.</span>
+                                        </div>
+                                    </div>
+                                    <p id="productivityCost" class="text-2xl font-bold text-gray-800">0 kr.</p>
+                                </div>
+                                <div class="result-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                    <div class="flex items-center">
+                                        <h3 class="text-gray-500 text-sm">Udskiftning af personale</h3>
+                                        <div class="tooltip ml-2">
+                                            <span class="info-icon">i</span>
+                                            <span class="tooltip-text">Omkostninger ved at stressramte medarbejdere forlader virksomheden, inkl. rekruttering og oplæring af nye medarbejdere.</span>
+                                        </div>
+                                    </div>
+                                    <p id="turnoverCost" class="text-2xl font-bold text-gray-800">0 kr.</p>
+                                </div>
+                                <div class="result-card bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                                    <div class="flex items-center">
+                                        <h3 class="text-gray-500 text-sm">Samlede omkostninger</h3>
+                                        <div class="tooltip ml-2">
+                                            <span class="info-icon">i</span>
+                                            <span class="tooltip-text">De totale årlige omkostninger ved stress i virksomheden, summen af alle ovenstående kategorier.</span>
+                                        </div>
+                                    </div>
+                                    <p id="totalCost" class="text-2xl font-bold text-red-600">0 kr.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 p-3 bg-primary-50 rounded-lg border border-primary-100">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                    </svg>
+                                    <p class="text-sm text-primary-800">
+                                        <span id="stressedEmployees">0</span> ud af <span id="totalEmployees">0</span> medarbejdere er påvirket af stress
+                                    </p>
+                                </div>
+                                <p class="text-sm text-primary-800 mt-1 ml-7">
+                                    Gennemsnitlig omkostning pr. stressramt medarbejder: <span id="costPerEmployee" class="font-semibold">0 kr.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold text-gray-800">Visualisering</h2>
+                            <div class="flex space-x-2">
+                                <div id="chartTab" class="tab active px-3 py-1">Graf</div>
+                                <div id="tableTab" class="tab px-3 py-1">Tabel</div>
+                            </div>
+                        </div>
+                        
+                        <div id="chartView" class="mt-4">
+                            <!-- Helt ny graf struktur -->
+                            <div class="chart-wrapper">
+                                <!-- Y-akse linjer og labels -->
+                                <div class="chart-y-axis">
+                                    <div class="chart-y-axis-label" id="y-max">0 kr.</div>
+                                    <div class="chart-y-axis-label" style="top: 25%">0 kr.</div>
+                                    <div class="chart-y-axis-label" style="top: 50%">0 kr.</div>
+                                    <div class="chart-y-axis-label" style="top: 75%">0 kr.</div>
+                                    <div class="chart-y-axis-label" style="top: 100%">0 kr.</div>
+                                </div>
+                                
+                                <!-- Vandrette gitterlinjer -->
+                                <div class="chart-grid-line" style="top: 0%"></div>
+                                <div class="chart-grid-line" style="top: 25%"></div>
+                                <div class="chart-grid-line" style="top: 50%"></div>
+                                <div class="chart-grid-line" style="top: 75%"></div>
+                                <div class="chart-grid-line" style="top: 100%"></div>
+                                
+                                <!-- Søjler -->
+                                <div class="chart-container">
+                                    <div class="chart-bar-container">
+                                        <div id="absentBar" class="chart-bar bg-primary-500" style="height: 0%"></div>
+                                        <div class="chart-bar-label">Sygefravær</div>
+                                        <div id="absentBarValue" class="chart-bar-value">0 kr.</div>
+                                    </div>
+                                    
+                                    <div class="chart-bar-container">
+                                        <div id="productivityBar" class="chart-bar bg-primary-400" style="height: 0%"></div>
+                                        <div class="chart-bar-label">Produktivitet</div>
+                                        <div id="productivityBarValue" class="chart-bar-value">0 kr.</div>
+                                    </div>
+                                    
+                                    <div class="chart-bar-container">
+                                        <div id="turnoverBar" class="chart-bar bg-primary-600" style="height: 0%"></div>
+                                        <div class="chart-bar-label">Udskiftning</div>
+                                        <div id="turnoverBarValue" class="chart-bar-value">0 kr.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="tableView" class="mt-4 hidden">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th class="py-2 px-4 text-left text-sm font-medium text-gray-700">Omkostningstype</th>
+                                            <th class="py-2 px-4 text-right text-sm font-medium text-gray-700">Beløb</th>
+                                            <th class="py-2 px-4 text-right text-sm font-medium text-gray-700">Andel</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr>
+                                            <td class="py-2 px-4 text-sm text-gray-700">Sygefravær</td>
+                                            <td id="tableAbsentCost" class="py-2 px-4 text-sm text-right text-gray-700">0 kr.</td>
+                                            <td id="tableAbsentPercent" class="py-2 px-4 text-sm text-right text-gray-700">0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 text-sm text-gray-700">Produktivitetstab</td>
+                                            <td id="tableProductivityCost" class="py-2 px-4 text-sm text-right text-gray-700">0 kr.</td>
+                                            <td id="tableProductivityPercent" class="py-2 px-4 text-sm text-right text-gray-700">0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 text-sm text-gray-700">Udskiftning af personale</td>
+                                            <td id="tableTurnoverCost" class="py-2 px-4 text-sm text-right text-gray-700">0 kr.</td>
+                                            <td id="tableTurnoverPercent" class="py-2 px-4 text-sm text-right text-gray-700">0%</td>
+                                        </tr>
+                                        <tr class="bg-gray-50 font-medium">
+                                            <td class="py-2 px-4 text-sm text-gray-700">Total</td>
+                                            <td id="tableTotalCost" class="py-2 px-4 text-sm text-right text-red-600">0 kr.</td>
+                                            <td class="py-2 px-4 text-sm text-right text-gray-700">100%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="signature mt-2">
+                            Beregnet af Medica Pro's stressomkostningsværktøj
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-primary-50 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Om beregningen</h2>
+                <p class="text-gray-600">
+                    Denne beregner is baseret på offentlige data fra Det Nationale Forskningscenter for Arbejdsmiljø og Sundhedsstyrelsen. 
+                    Beregningen inkluderer direkte omkostninger ved sygefravær, produktivitetstab og omkostninger ved udskiftning af personale.
+                </p>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg border border-gray-200">
+                        <h3 class="font-medium text-gray-800 mb-1">Sygefravær</h3>
+                        <p class="text-sm text-gray-600">
+                            Beregnes ud fra antal sygedage × daglig løn × antal stressramte medarbejdere. Stressramte har typisk 2-3 gange så højt sygefravær som gennemsnittet.
+                        </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200">
+                        <h3 class="font-medium text-gray-800 mb-1">Produktivitetstab</h3>
+                        <p class="text-sm text-gray-600">
+                            Beregnes ud fra antal arbejdsdage × daglig løn × produktivitetstab × antal stressramte. Stress kan reducere produktiviteten med 20-40%.
+                        </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-gray-200">
+                        <h3 class="font-medium text-gray-800 mb-1">Udskiftning af personale</h3>
+                        <p class="text-sm text-gray-600">
+                            Beregnes ud fra antagelsen om at 10% af stressramte forlader virksomheden, og at det koster ca. 6 måneders løn at erstatte en medarbejder.
+                        </p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mt-4 text-sm italic">
+                    Bemærk: Dette er et estimat og de faktiske omkostninger kan variere afhængigt af branche, virksomhedskultur og andre faktorer.
+                    Beregningen er tænkt som et værktøj til at skabe overblik og bevidsthed om de økonomiske konsekvenser af stress på arbejdspladsen.
+                </p>
+            </div>
+        </div>
+        
+        <div class="bg-gray-100 p-6 text-center">
+            <p class="text-gray-600 text-sm">
+                © 2025 Medica Pro. Alle rettigheder forbeholdes.
+            </p>
+        </div>
+    </div>
+    
+    <!-- CTA Popup Button -->
+    <button id="ctaButton" class="cta-button bg-primary-500 hover:bg-primary-600 text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+        </svg>
+        Få hjælp til stresshåndtering
+    </button>
+    
+    <!-- Modal -->
+    <div id="ctaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="bg-gradient-to-r from-primary-500 to-primary-700 p-6 text-white">
+                <div class="header-container">
+                    <div class="header-content">
+                        <h2 class="text-2xl font-bold">Få hjælp til at reducere stress på arbejdspladsen</h2>
+                        <p class="mt-2 opacity-90">Lad os hjælpe dig med at mindske omkostningerne ved stress i din virksomhed</p>
+                    </div>
+                    <div class="logo-container">
+                        <img src="https://assets.ycodeapp.com/assets/app87248/Images/til%20forms%20(1)-oqsemermuy.webp" alt="Medica Pro Logo" class="logo" style="max-height: 60px;">
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="mb-6">
+                    <p class="text-gray-700">
+                        Medica Pro tilbyder skræddersyede løsninger til at forebygge og håndtere stress på arbejdspladsen. 
+                        Vores eksperter kan hjælpe med at implementere effektive strategier, der reducerer omkostningerne og 
+                        forbedrer medarbejdernes trivsel og produktivitet.
+                    </p>
+                    <div class="mt-4 bg-primary-50 p-4 rounded-lg border border-primary-100">
+                        <h3 class="font-medium text-primary-800">Din beregning viser:</h3>
+                        <div class="mt-2 grid grid-cols-2 gap-2 text-sm">
+                            <div>
+                                <span class="text-gray-600">Samlede omkostninger:</span>
+                                <span id="modalTotalCost" class="font-bold text-red-600 ml-1">0 kr.</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600">Stressramte medarbejdere:</span>
+                                <span id="modalStressedEmployees" class="font-bold text-gray-800 ml-1">0</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-600">Omkostning pr. medarbejder:</span>
+                                <span id="modalCostPerEmployee" class="font-bold text-gray-800 ml-1">0 kr.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kontaktformular -->
+                <div id="contactFormContainer">
+                    <form id="contactForm" class="space-y-4" 
+                        <!-- Beregningsresultater som skjulte felter -->
+                        <input type="hidden" id="formTotalCost" name="totalCost" value="0">
+                        <input type="hidden" id="formStressedEmployees" name="stressedEmployees" value="0">
+                        <input type="hidden" id="formCostPerEmployee" name="costPerEmployee" value="0">
+                        <input type="hidden" id="formAbsentCost" name="absentCost" value="0">
+                        <input type="hidden" id="formProductivityCost" name="productivityCost" value="0">
+                        <input type="hidden" id="formTurnoverCost" name="turnoverCost" value="0">
+                        
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1 text-sm">Navn</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500" required>
+                        </div>
+                        <div>
+                            <label for="company" class="block text-gray-700 mb-1 text-sm">Virksomhed</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1 text-sm">E-mail</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-1 text-sm">Telefon</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1 text-sm">Besked (valgfri)</label>
+                            <textarea id="message" name="message" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="consent" name="consent" value="Ja" class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded" required>
+                            <label for="consent" class="ml-2 block text-sm text-gray-700">
+                                Jeg accepterer, at Medica Pro må kontakte mig vedrørende min henvendelse
+                            </label>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-4 rounded-md transition duration-300 ease-in-out">
+                            Send forespørgsel
+                        </button>
+                    </form>
+                </div>
+                
+                
+                <!-- Success besked (vises efter formular er sendt) -->
+                <div id="formSuccess" class="hidden mt-4 p-6 bg-green-50 text-center rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="text-xl font-medium text-green-800 mb-2">Tak for din henvendelse!</h3>
+                    <p class="text-green-700">
+                        Vi har modtaget din forespørgsel og kontakter dig hurtigst muligt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
